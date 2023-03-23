@@ -28,7 +28,7 @@ const Profile = ({ type, name, avatar, email, properties }: ProfileProps) => (
         }}
       >
         <img
-          src="https://images.unsplash.com/photo-1618005198919-d3d4b5a92ead?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1374&q=80"
+          src="https://img.freepik.com/free-photo/sparkle-cloud-light-blue-dreamy-background_53876-104027.jpg?w=1380&t=st=1679529002~exp=1679529602~hmac=93f3a258b6a0bb0ce6cd887fc1787f99ab7ea41e0ce0924fcea292416fd0c0d1"
           width={340}
           height={320}
           alt="abstract"
@@ -58,7 +58,7 @@ const Profile = ({ type, name, avatar, email, properties }: ProfileProps) => (
                   <Typography fontSize={14} fontWeight={500} color="#808191">Address</Typography>
                   <Box display="flex" flexDirection="row" alignItems="center" gap="10px">
                     <Place sx={{ color: '#11142D' }} />
-                    <Typography fontSize={14} color="#11142D">4517 Washington Ave. Manchaster, Kentucky 39495</Typography>
+                    <Typography fontSize={14} color="#11142D">4517 Washdish Ave. Manila, Philippines</Typography>
                   </Box>
                 </Stack>
 
@@ -67,7 +67,7 @@ const Profile = ({ type, name, avatar, email, properties }: ProfileProps) => (
                     <Typography fontSize={14} fontWeight={500} color="#808191">Phone Number</Typography>
                     <Box display="flex" flexDirection="row" alignItems="center" gap="10px">
                       <Phone sx={{ color: '#11142D' }} />
-                      <Typography fontSize={14} color="#11142D" noWrap>+0123 456 7890</Typography>
+                      <Typography fontSize={14} color="#11142D" noWrap>+63 926 209 3456</Typography>
                     </Box>
                   </Stack>
 

@@ -1,26 +1,30 @@
 import { useList } from "@pankod/refine-core";
 import { Typography, Box, Stack } from "@pankod/refine-mui";
+import { useState } from "react";
 
 import { 
   PieChart, 
   PropertyReferrals, 
   TotalRevenue, 
   PropertyCard,
-  TopAgent
 } from 'components'
 
 const Home = () => {
+    
   const { data, isLoading, isError } = useList({
+
       resource: "properties",
       config: {
           pagination: {
-              pageSize: 8,
+              pageSize: 4,
           },
       },
   });
 
   const latestProperties = data?.data ?? [];
+  let countProperties: number = data?.total as number;
 
+      
   if (isLoading) return <Typography>Loading...</Typography>;
   if (isError) return <Typography>Something went wrong!</Typography>;
 
@@ -33,31 +37,31 @@ const Home = () => {
           <Box mt="20px" display="flex" flexWrap="wrap" gap={4}>
               <PieChart
                   title="Properties for Sale"
-                  value={128}
+                  value={countProperties}
                   series={[75, 25]}
                   colors={["#275be8", "#c4e8ef"]}
               />
               <PieChart
                   title="Properties for Rent"
-                  value={285}
+                  value={countProperties}
                   series={[60, 40]}
                   colors={["#275be8", "#c4e8ef"]}
               />
               <PieChart
-                  title="Total customers"
-                  value={1001}
+                  title="Agents"
+                  value={7}
                   series={[75, 25]}
                   colors={["#275be8", "#c4e8ef"]}
               />
               <PieChart
-                  title="Agents"
-                  value={69}
+                  title="Viewers"
+                  value={55}
                   series={[75, 25]}
                   colors={["#275be8", "#c4e8ef"]}
               />
           </Box>
 
-          {/* <Stack
+          <Stack
               mt="25px"
               width="100%"
               direction={{ xs: "column", lg: "row" }}
@@ -65,7 +69,7 @@ const Home = () => {
           >
               <TotalRevenue />
               <PropertyReferrals />
-          </Stack> */}
+          </Stack>
 
           <Box
               flex={1}
@@ -85,7 +89,8 @@ const Home = () => {
                   mt={2.5}
                   sx={{ display: "flex", flexWrap: "wrap", gap: 4 }}
               >
-                  {latestProperties.map((property) => (
+                  {
+                  latestProperties.map((property) => (
                       <PropertyCard
                           key={property._id}
                           id={property._id}
@@ -95,8 +100,11 @@ const Home = () => {
                           photo={property.photo}
                       />
                   ))}
+                  
+                 
               </Box>
           </Box>
+          
       </Box>
   );
 };
